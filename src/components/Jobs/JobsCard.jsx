@@ -1,6 +1,7 @@
 import React from "react";
 import { CiClock2 } from "react-icons/ci";
 import styles from "./AllJobs.module.css";
+import { FaRegHeart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 const JobsCard = ({ job }) => {
   const { position, logo, company, desc, contract, vacancy, location } =
@@ -31,9 +32,16 @@ const JobsCard = ({ job }) => {
           <p className={`${styles.info}`}>{location}</p>
         </div>
       </div>
-      <NavLink to={`/jobs/${job.position}`}>
-        <button className={`${styles.card_btn}`}>Apply Now</button>
-      </NavLink>
+      <div className={`${styles.groupCard}`}>
+        <NavLink>
+          <button className={`${styles.card_btn} ${styles.icon_btn}`}>
+            <FaRegHeart />
+          </button>
+        </NavLink>
+        <NavLink to={`/jobs/${job.position}`}>
+          <button className={`${styles.card_btn}`}>Apply Now</button>
+        </NavLink>
+      </div>
     </div>
   );
 };

@@ -81,6 +81,11 @@
 .com_name {
   color: #444;
 }
+.groupCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .card_btn {
   margin-top: 25px;
   width: 100%;
@@ -93,4 +98,7 @@
   font-weight: 600;
   color: #444;
   cursor: pointer;
+}
+.card_btn.icon_btn {
+  border: none;
 }
