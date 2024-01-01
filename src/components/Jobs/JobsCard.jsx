@@ -31,7 +31,7 @@ const JobsCard = ({ job }) => {
           <p className={`${styles.info}`}>{location}</p>
         </div>
       </div>
-      <NavLink to="/register">
+      <NavLink to={`/jobs/${job.position}`}>
         <button className={`${styles.card_btn}`}>Apply Now</button>
       </NavLink>
     </div>

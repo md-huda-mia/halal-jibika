@@ -1,0 +1,110 @@
+/*===========*/
+.details_page {
+  padding: 50px 7%;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+.details__wrapper {
+  margin-top: -110px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px #dddddd;
+}
+
+.details__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details__top {
+  margin-bottom: 30px;
+}
+
+.details__top button {
+  padding: 7px 25px;
+
+  border-radius: 5px;
+  background: #7c5dfa3b;
+  border: none;
+}
+
+.details__top button a {
+  text-decoration: none;
+  color: #7c5dfa;
+  font-size: 0.9rem;
+}
+
+.about__job h6 {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.about__job h6 {
+  font-size: 0.9rem;
+  color: #777;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.about__job h1 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.about__job span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #7c5dfa;
+}
+.btn {
+  padding: 8px 35px;
+  border: none;
+  background: #2a67ff;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.about__job {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.job__desc {
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.requirements h1 {
+  margin-bottom: 10px;
+}
+
+.responsibility h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.requirements p,
+.responsibility p {
+  margin-bottom: 15px;
+  line-height: 30px;
+}
+
+.requirement__item,
+.responsibility__item {
+  padding-left: 30px;
+}
+.requirement__item li,
+.responsibility__item li {
+  margin-bottom: 10px;
+  margin-left: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

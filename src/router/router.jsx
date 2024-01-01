@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Register/Login";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Jobs from "../pages/Jobs/Jobs";
+import DetailsJob from "../pages/Details/DetailsJob";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />,
+      },
+      {
+        path: "/jobs/:position",
+        element: <DetailsJob />,
       },
       {
         path: "/favorite",
