@@ -37,7 +37,7 @@ const Navbar = () => {
             menuOpen ? styles.show_menu : ""
           }`}>
           <li>
-            <NavLink className={`${styles.nav_link}`} to="/">
+            <NavLink to="/" className={`${styles.nav_link} `}>
               Home
             </NavLink>
           </li>

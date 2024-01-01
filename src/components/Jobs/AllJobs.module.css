@@ -103,3 +103,13 @@
 .card_btn.icon_btn {
   border: none;
 }
+/* ============== favorite page ======== */
+.header {
+  padding: 50px;
+  background: #eceff7;
+  font-size: 25px;
+  color: #333;
+}
+.favorite_page {
+  padding: 100px 4%;
+}
