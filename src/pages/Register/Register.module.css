@@ -40,6 +40,7 @@ img {
 .input_field {
   width: 100%;
   padding: 10px 0;
+  position: relative;
 }
 
 .inputText {
@@ -48,6 +49,7 @@ img {
   border: 1px solid #e3e8f4;
   border-radius: 5px;
   font-size: 18px;
+  background: transparent;
 }
 .submit_btn {
   width: 100%;
@@ -69,4 +71,14 @@ img {
 .submit_btn:hover {
   background: #416cf8;
   gap: 12px;
+}
+.show_icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #8b8b8b;
+  cursor: pointer;
+  padding: 5px;
 }
