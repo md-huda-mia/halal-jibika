@@ -136,3 +136,6 @@ span.text {
   font-weight: normal;
   font-family: monospace;
 }
+.delete_icon {
+  font-size: 25px;
+}

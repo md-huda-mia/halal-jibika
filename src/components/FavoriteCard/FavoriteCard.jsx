@@ -4,7 +4,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { CiClock2 } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
 
-const FavoriteCard = ({ job }) => {
+const FavoriteCard = ({ job, deleteHandler }) => {
   const { position, logo, company, desc, contract, vacancy, location, id } =
     job || {};
   return (
@@ -35,8 +35,10 @@ const FavoriteCard = ({ job }) => {
       </div>
       <div className={`${styles.groupCard}`}>
         <NavLink>
-          <button className={`${styles.card_btn} ${styles.icon_btn}`}>
-            <MdDeleteOutline />
+          <button
+            onClick={() => deleteHandler(id)}
+            className={`${styles.card_btn} ${styles.icon_btn}`}>
+            <MdDeleteOutline className={`${styles.delete_icon}`} />
           </button>
         </NavLink>
         <NavLink to={`/jobs/${job.position}`}>

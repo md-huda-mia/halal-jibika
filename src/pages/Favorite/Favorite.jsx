@@ -16,6 +16,13 @@ const Favorite = () => {
   }, []);
 
   console.log(favorite);
+  //======== deleteHandler ========
+  //======== deleteHandler ========
+  const deleteHandler = (id) => {
+    const updatedFavorite = favorite.filter((job) => job.id !== id);
+    setFavorite(updatedFavorite);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorite));
+  };
 
   return (
     <>
@@ -23,21 +30,32 @@ const Favorite = () => {
         <h2>{favorite.length} Favorite Jobs </h2>
       </div>
       <div className={`${styles.favorite_page}`}>
-        <div className={`${styles.noData}`}>
-          <p>
-            {noFound} <br />{" "}
-            <span className={`${styles.text}`}>
-              Please Add your favorite Jobs
-            </span>{" "}
-          </p>
-        </div>
-        <div className="favorite_wrapper">
-          <div className={`${styles.jobCard}`}>
-            {favorite?.map((job) => (
-              <FavoriteCard key={job.id} job={job} />
-            ))}
-          </div>
-        </div>
+        {noFound ? (
+          <>
+            <div className={`${styles.noData}`}>
+              <p>
+                {noFound} <br />{" "}
+                <span className={`${styles.text}`}>
+                  Please Add your favorite Jobs
+                </span>{" "}
+              </p>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="favorite_wrapper">
+              <div className={`${styles.jobCard}`}>
+                {favorite?.map((job) => (
+                  <FavoriteCard
+                    key={job.id}
+                    job={job}
+                    deleteHandler={deleteHandler}
+                  />
+                ))}
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
