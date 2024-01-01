@@ -1,0 +1,59 @@
+.HoldsUs {
+  padding: 50px 7%;
+}
+.title {
+  margin-bottom: 65px;
+}
+
+.social_trust {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.single_card_item {
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+.item_1:hover {
+  background: #f6f6f6;
+}
+.card_top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 15px;
+}
+.card_top h3 {
+  color: #444;
+}
+.icon {
+  background: #e2e2e2;
+  padding: 5px;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #204fc5;
+}
+.card_text p {
+  color: #686868;
+  font-size: 16px;
+  line-height: 25px;
+}
+.item_2:hover {
+  background: #fdebfd;
+}
+.item_2 .icon {
+  background: #ffddff;
+}
+.item_3:hover {
+  background: #fffee0;
+}
+.item_3 .icon {
+  background: #fdf8af;
+}
