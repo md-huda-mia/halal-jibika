@@ -9,6 +9,7 @@ import Login from "../pages/Register/Login";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Jobs from "../pages/Jobs/Jobs";
 import DetailsJob from "../pages/Details/DetailsJob";
+import PassForget from "../pages/ForgetPass/PassForget";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/forgetpassword",
+        element: <PassForget />,
       },
     ],
   },
