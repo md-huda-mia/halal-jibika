@@ -6,7 +6,7 @@ import CustomHooks from "../../Hooks/CustomHooks";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { user } = CustomHooks();
+  const { user, logout } = CustomHooks();
   console.log(user);
 
   const toggleMenu = () => {
@@ -72,7 +72,9 @@ const Navbar = () => {
                 src="https://i.ibb.co/0J4FH5f/Zrks-Pz-H5-Aadq.gif"
                 alt=""
               />
-              <button className={`${styles.btn_1}`}>LogOut</button>
+              <button onClick={logout} className={`${styles.btn_1}`}>
+                LogOut
+              </button>
             </>
           ) : (
             <>

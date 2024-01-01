@@ -4,6 +4,7 @@ import { auth } from "../firebase/firebase.config";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
 
@@ -12,15 +13,21 @@ export const ApiContext = createContext(null);
 const ContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
 
-  // ====== create user ========
+  //1. ====== create user ========
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
-  // 5. Logout
+  //2. ======Login with Password ======
+  const signin = (email, password) => {
+    // setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+  // ====== Logout ========
   const logout = () => {
-    setLoading(true);
+    // setLoading(true);
     return signOut(auth);
   };
+  // ========= On auth state change =======
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       try {
@@ -34,8 +41,10 @@ const ContextProvider = ({ children }) => {
       unsubscribe();
     };
   }, [user]);
+  // ======== function object ========
   const golobalValue = {
     createUser,
+    signin,
     user,
     logout,
   };

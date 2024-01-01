@@ -1,8 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Register.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import CustomHooks from "../../Hooks/CustomHooks";
+import PasswordInput from "./PasswordInput";
+// =========
+const inisialState = {
+  email: "",
+  password: "",
+};
 const Login = () => {
+  const [formData, setFormData] = useState(inisialState);
+  const { email, password } = formData;
+
+  const { signin, resetPassword, signInWithGoogle } = CustomHooks();
+
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const loginUser = (e) => {
+    e.preventDefault();
+    console.log("Form Data:", formData);
+    signin(formData.email, formData.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User:", user);
+      })
+      .catch((error) => {
+        console.log("Login Error:", error);
+      });
+  };
+
   return (
     <div className={`${styles.register_section}`}>
       <div className={`${styles.form_secion}`}>
@@ -15,7 +46,7 @@ const Login = () => {
             </NavLink>
           </p>
         </div>
-        <form className={`${styles.form}`}>
+        <form onSubmit={loginUser} className={`${styles.form}`}>
           <div className={`${styles.input_field}`}>
             <input
               className={`${styles.inputText}`}
@@ -24,14 +55,12 @@ const Login = () => {
               placeholder="Email Address"
             />
           </div>
-          <div className={`${styles.input_field}`}>
-            <input
-              className={`${styles.inputText}`}
-              name="password"
-              type="password"
-              placeholder="Password"
-            />
-          </div>
+          <PasswordInput
+            placeholder="Password"
+            name="password"
+            value={password}
+            onChange={handleInputChange}
+          />
 
           <button className={`${styles.submit_btn}`} type="submit">
             <span> Sign In</span> <FaLongArrowAltRight />
