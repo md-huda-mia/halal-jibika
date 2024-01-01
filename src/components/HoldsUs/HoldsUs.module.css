@@ -1,8 +1,9 @@
 .HoldsUs {
   padding: 50px 7%;
 }
-.title {
-  margin-bottom: 65px;
+.title h2 {
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .social_trust {
@@ -56,4 +57,39 @@
 }
 .item_3 .icon {
   background: #fdf8af;
+}
+/* ========= */
+.holdsUsBanner {
+  /* background: #e2e2e2; */
+  background: #f7f7f8;
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.banner_text h1 {
+  color: #204fc5;
+  margin-bottom: 10px;
+}
+
+.banner_text h2 {
+  color: #222;
+}
+
+button.btn {
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: 1px solid #204fc5;
+  color: #204fc5;
+  font-size: 20px;
+  background: transparent;
+  transition: all 0.5s ease;
+}
+button.btn:hover {
+  background: #204fc5;
+  color: #fff;
+  cursor: pointer;
 }

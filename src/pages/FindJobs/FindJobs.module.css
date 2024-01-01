@@ -1,6 +1,6 @@
 .job_header {
   padding: 50px 7%;
-  background: #f9f9f9;
+  background: #eceff7;
 }
 
 h2.title {
@@ -22,6 +22,7 @@ h2.title {
   margin-top: -50px;
   background: #fff;
   border-radius: 10px;
+  box-shadow: 0px -3px 10px #efefef;
 }
 .search_panel {
   display: flex;

@@ -64,12 +64,14 @@ const HoldsUs = () => {
         </div>
       </div>
       {/* ========== ====== */}
-      <div className="holdsUsBanner">
-        <div className="banner_text">
-          <h1>Ready to switch a career</h1>
-          <h2></h2>
+      <div className={styles.holdsUsBanner}>
+        <div className={styles.banner_text}>
+          <h1>Ready to switch a career?</h1>
+          <h2>Let's get started!</h2>
         </div>
-        <div className="banner_btn"></div>
+        <div className="banner_btn">
+          <button className={styles.btn}>Get Started</button>
+        </div>
       </div>
     </div>
   );
