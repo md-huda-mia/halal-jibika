@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import PasswordInput from "./PasswordInput";
 import CustomHooks from "../../Hooks/CustomHooks";
+import { toast } from "react-toastify";
 
 const inisialState = {
   name: "",
@@ -26,13 +27,6 @@ const Register = () => {
   const handleInputChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    /** 
-    // Update password security state based on password criteria
-    setUCase(/[A-Z]/.test(value));
-    setNum(/[0-9]/.test(value));
-    setSChar(/[!@#$%^&*(),.?":{}|<>]/.test(value));
-    setPassLength(value.length >= 6);
-    */
     setFormData({ ...formData, [name]: value });
   };
 
@@ -54,14 +48,15 @@ const Register = () => {
       toast.warning("Invalid email address");
       return;
     }
-
     // ========== Create new User ============
     createUser(formData.email, formData.password)
       .then((userCredential) => {
         const user = userCredential.user;
+        toast.success("User Create Successfully");
         console.log(user);
       })
       .catch((error) => {
+        toast.success(error);
         console.log(error);
       });
   };
@@ -147,7 +142,41 @@ const Register = () => {
             value={password2}
             onChange={handleInputChange}
           />
-
+          {/*======= Display password strength indicators ======*/}
+          <div className={`${styles.password_strength}`}>
+            <div
+              className={
+                uCase
+                  ? `${styles.indicator} ${styles.active}`
+                  : `${styles.indicator}`
+              }>
+              Uppercase
+            </div>
+            <div
+              className={
+                num
+                  ? `${styles.indicator} ${styles.active}`
+                  : `${styles.indicator}`
+              }>
+              Number (0,9)
+            </div>
+            <div
+              className={
+                sChar
+                  ? `${styles.indicator} ${styles.active}`
+                  : `${styles.indicator}`
+              }>
+              Special Character
+            </div>
+            <div
+              className={
+                passLength
+                  ? `${styles.indicator} ${styles.active}`
+                  : `${styles.indicator}`
+              }>
+              At least 6 characters
+            </div>
+          </div>
           {/* <div className={`${styles.input_field}`}>
             <input
               className={`${styles.inputText}`}

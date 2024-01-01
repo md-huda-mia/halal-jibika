@@ -82,3 +82,18 @@ img {
   cursor: pointer;
   padding: 5px;
 }
+.password_strength {
+  display: flex;
+  padding: 8px 0;
+  gap: 10px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.indicator {
+  color: #9f9f9f;
+}
+
+.indicator.active {
+  color: #009688;
+}

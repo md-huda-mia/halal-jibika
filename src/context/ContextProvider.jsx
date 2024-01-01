@@ -1,27 +1,43 @@
 import React, { createContext, useEffect, useState } from "react";
 import data from "../assets/data";
 import { auth } from "../firebase/firebase.config";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
 
 export const ApiContext = createContext(null);
 
 const ContextProvider = ({ children }) => {
-  const [jobs, setJobs] = useState([]);
+  const [user, setUser] = useState({});
 
   // ====== create user ========
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
-
+  // 5. Logout
+  const logout = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
   useEffect(() => {
-    fetch(data)
-      .then((res) => res.json())
-      .then((data) => setJobs(data));
-  }, []);
-  // console.log(jobs);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      try {
+        setUser(user);
+      } catch (error) {
+        console.error("Error setting user:", error);
+      }
+    });
 
+    return () => {
+      unsubscribe();
+    };
+  }, [user]);
   const golobalValue = {
-    jobs,
     createUser,
+    user,
+    logout,
   };
 
   return (

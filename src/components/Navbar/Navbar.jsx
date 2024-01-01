@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
+import CustomHooks from "../../Hooks/CustomHooks";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user } = CustomHooks();
+  console.log(user);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -60,19 +63,26 @@ const Navbar = () => {
           </li>
         </ul>
         {/* ===== user menu ==== */}
-        <div className={`${styles.user_menu}`}>
-          <img
-            className={`${styles.userImg}`}
-            src="https://i.ibb.co/0J4FH5f/Zrks-Pz-H5-Aadq.gif"
-            alt=""
-          />
-          <div className={`${styles.user_button}`}>
-            <NavLink to="/register">
-              <button className={`${styles.btn_1}`}>Register</button>
-            </NavLink>
 
-            <button className={`${styles.btn_1}`}>LogOut</button>
-          </div>
+        <div className={`${styles.user_menu}`}>
+          {user?.email ? (
+            <>
+              <img
+                className={`${styles.userImg}`}
+                src="https://i.ibb.co/0J4FH5f/Zrks-Pz-H5-Aadq.gif"
+                alt=""
+              />
+              <button className={`${styles.btn_1}`}>LogOut</button>
+            </>
+          ) : (
+            <>
+              <div className={`${styles.user_button}`}>
+                <NavLink to="/register">
+                  <button className={`${styles.btn_1}`}>Register</button>
+                </NavLink>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
