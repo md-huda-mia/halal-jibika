@@ -66,7 +66,10 @@ const Login = () => {
             value={password}
             onChange={handleInputChange}
           />
-
+          {/* ======= */}
+          <div className="forget_pass">
+            <NavLink to="">Forget Password</NavLink>
+          </div>
           <button className={`${styles.submit_btn}`} type="submit">
             <span> Sign In</span> <FaLongArrowAltRight />
           </button>
