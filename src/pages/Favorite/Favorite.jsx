@@ -40,22 +40,17 @@ const Favorite = () => {
                         deleteHandler={deleteHandler}></FavoriteCard>
                     ))
                   : favorite
-                      .slice(0, 4)
+                      .slice(0, 2)
                       .map((job) => (
-                        <FavoriteCard job={job} key={job.id}></FavoriteCard>
+                        <FavoriteCard
+                          job={job}
+                          key={job.id}
+                          deleteHandler={deleteHandler}></FavoriteCard>
                       ))}
-                {/* ========= */}
-                {/* {favorite?.map((job) => (
-                  <FavoriteCard
-                    key={job.id}
-                    job={job}
-                    deleteHandler={deleteHandler}
-                  />
-                ))} */}
               </div>
 
-              <div className="isShow_btn">
-                {favorite.length > 4 && (
+              <div className={`${styles.isShow_btn}`}>
+                {favorite.length > 2 && (
                   <div>
                     <button
                       onClick={() => setIsShow(!isShow)}
