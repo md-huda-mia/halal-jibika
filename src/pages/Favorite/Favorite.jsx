@@ -30,18 +30,7 @@ const Favorite = () => {
         <h2>{favorite.length} Favorite Jobs </h2>
       </div>
       <div className={`${styles.favorite_page}`}>
-        {noFound ? (
-          <>
-            <div className={`${styles.noData}`}>
-              <p>
-                {noFound} <br />{" "}
-                <span className={`${styles.text}`}>
-                  Please Add your favorite Jobs
-                </span>{" "}
-              </p>
-            </div>
-          </>
-        ) : (
+        {favorite.length > 0 ? (
           <>
             <div className="favorite_wrapper">
               <div className={`${styles.jobCard}`}>
@@ -53,6 +42,17 @@ const Favorite = () => {
                   />
                 ))}
               </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className={`${styles.noData}`}>
+              <p>
+                No Data Found <br />
+                <span className={`${styles.text}`}>
+                  Please Add your favorite Jobs
+                </span>{" "}
+              </p>
             </div>
           </>
         )}
