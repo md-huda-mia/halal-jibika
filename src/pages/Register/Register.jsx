@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Register.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import PasswordInput from "./PasswordInput";
 import CustomHooks from "../../Hooks/CustomHooks";
@@ -18,6 +18,9 @@ const Register = () => {
   const { createUser } = CustomHooks();
   const [formData, setFormData] = useState(inisialState);
   const { name, email, password, password2 } = formData;
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   // ===== password conform
   const [uCase, setUCase] = useState(false);
   const [num, setNum] = useState(false);
@@ -53,6 +56,7 @@ const Register = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         toast.success("User Create Successfully");
+        navigate(from, { replace: true });
         console.log(user);
       })
       .catch((error) => {

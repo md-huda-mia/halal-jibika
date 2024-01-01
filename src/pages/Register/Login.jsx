@@ -12,9 +12,10 @@ const inisialState = {
 const Login = () => {
   const [formData, setFormData] = useState(inisialState);
   const { email, password } = formData;
-
   const { signin, resetPassword, signInWithGoogle } = CustomHooks();
-
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleInputChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -27,6 +28,7 @@ const Login = () => {
     signin(formData.email, formData.password)
       .then((userCredential) => {
         const user = userCredential.user;
+        navigate(from, { replace: true });
         console.log("User:", user);
       })
       .catch((error) => {
