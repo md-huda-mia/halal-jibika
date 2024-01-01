@@ -49,10 +49,13 @@ const Login = () => {
         <form onSubmit={loginUser} className={`${styles.form}`}>
           <div className={`${styles.input_field}`}>
             <input
-              className={`${styles.inputText}`}
-              name="email"
+              className={`${styles.inputText} ${styles.input}`}
               type="text"
               placeholder="Email Address"
+              name="email"
+              value={email}
+              onChange={handleInputChange}
+              required
             />
           </div>
           <PasswordInput
