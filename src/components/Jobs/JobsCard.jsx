@@ -3,9 +3,34 @@ import { CiClock2 } from "react-icons/ci";
 import styles from "./AllJobs.module.css";
 import { FaRegHeart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
 const JobsCard = ({ job }) => {
-  const { position, logo, company, desc, contract, vacancy, location } =
+  const { position, logo, company, desc, contract, vacancy, location, id } =
     job || {};
+
+  // ============================
+  const handleToFavorite = () => {
+    const addedFavoritesArray = [];
+    const favoriteItems = JSON.parse(localStorage.getItem("favorites"));
+    if (!favoriteItems) {
+      addedFavoritesArray.push(job);
+      localStorage.setItem("favorites", JSON.stringify(addedFavoritesArray));
+      toast.success("Good Job! added successfully!");
+    } else {
+      const isExits = favoriteItems.find((job) => job.id === id);
+      if (!isExits) {
+        addedFavoritesArray.push(...favoriteItems, job);
+        localStorage.setItem("favorites", JSON.stringify(addedFavoritesArray));
+        toast.success("Good Job! added successfully!");
+      } else {
+        toast.warning("No Add Duplicate Item");
+      }
+    }
+    console.log(favoriteItems);
+  };
+
+  // ===========================
+
   return (
     <div className={`${styles.singleCard}`}>
       <div className={`${styles.card_title}`}>
@@ -34,7 +59,9 @@ const JobsCard = ({ job }) => {
       </div>
       <div className={`${styles.groupCard}`}>
         <NavLink>
-          <button className={`${styles.card_btn} ${styles.icon_btn}`}>
+          <button
+            onClick={handleToFavorite}
+            className={`${styles.card_btn} ${styles.icon_btn}`}>
             <FaRegHeart />
           </button>
         </NavLink>
