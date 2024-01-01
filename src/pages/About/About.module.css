@@ -1,0 +1,51 @@
+.about_detailts {
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 7%;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.about_task_bar {
+  background: #f9f9f9;
+  padding: 25px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title_bar {
+  font-size: 35px;
+  color: #555;
+}
+
+.back_bar {
+  display: flex;
+  gap: 0px;
+}
+
+.back_bar li {
+  color: #777;
+}
+.icon_slash {
+  color: #686868;
+  font-size: 20px;
+}
+li.about_menu {
+  color: #555;
+  font-weight: 600;
+}
+/* =========== */
+.about_content {
+}
+.about_info_title {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: #444;
+}
+.about_content p {
+  color: #686868;
+  line-height: 25px;
+  font-size: 18px;
+}

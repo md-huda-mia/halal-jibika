@@ -1,0 +1,96 @@
+.job_secion {
+  padding: 80px 7%;
+}
+.jobCard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.singleCard {
+  padding: 25px;
+  box-shadow: 0px 10px 10px 3px #f3f3f3;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.singleCard:hover {
+  background: #2a67ff;
+  box-shadow: 0px 8px 20px 2px #7099ff;
+  cursor: pointer;
+}
+.singleCard:hover .title,
+.singleCard:hover .com_name,
+.singleCard:hover .card_btn {
+  color: #fff;
+}
+.singleCard:hover .des,
+.singleCard:hover .info,
+.singleCard:hover .time_info,
+.singleCard:hover .icon_clock {
+  color: #dbdbdb;
+}
+.card_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.title_info {
+}
+.com_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.icon_clock {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.time_info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #686868;
+}
+.info {
+  color: #686868;
+  padding: 5px 0 0;
+}
+.des {
+  color: #686868;
+  padding: 15px 0;
+  line-height: 22px;
+}
+
+.company_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.com_logo {
+  width: 30px;
+  border-radius: 50%;
+}
+.com_name {
+  color: #444;
+}
+.card_btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e4e4e4;
+  background: transparent;
+  border-radius: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+}

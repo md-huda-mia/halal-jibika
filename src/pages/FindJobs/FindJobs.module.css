@@ -1,0 +1,85 @@
+.job_header {
+  padding: 50px 7%;
+  background: #f9f9f9;
+}
+
+h2.title {
+  font-size: 35px;
+  color: #444;
+}
+/* ========== */
+.job_list {
+  padding: 20px 5px;
+}
+.job_list_wrapper {
+  max-width: 980px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin: auto;
+}
+.job_list_wrapper {
+  padding: 30px;
+  margin-top: -50px;
+  background: #fff;
+  border-radius: 10px;
+}
+.search_panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search_panel_01,
+.search_panel_02 {
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+}
+/* ========== */
+.search_panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search_panel_01,
+.search_panel_02 {
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+button.btn {
+  background: #204fc4;
+  color: #fff;
+  padding: 8px 25px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search_panel_01 {
+  padding: 15px 25px;
+}
+
+.search_panel_02 {
+  padding: 10px 25px;
+}
+.search_panel_03 select {
+  padding: 15px 25px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 5px;
+}
+.search_panel_01 input,
+.search_panel_02 input {
+  border: none;
+  font-size: 16px;
+  outline: none;
+  color: #000;
+}
+.icon_search_form {
+  color: #204fc4;
+}

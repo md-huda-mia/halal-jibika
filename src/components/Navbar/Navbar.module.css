@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kalnia:wght@100;200;600;700&display=swap");
+.navbar_section {
+  background: #fff;
+  margin: 0;
+  padding: 25px 7%;
+}
+.navbar_area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo_text {
+  color: #2a67ff;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-family: "Kalnia", serif;
+}
+.logo_Span {
+  color: #3e75ff;
+  font-weight: 200;
+  font-family: "Kalnia", serif;
+}
+.navbar_menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 18px;
+}
+.nav_link {
+  color: #686868;
+}
+.navbar_menu .active {
+  color: #fff;
+  background: #383838;
+}
+
+.userImg {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid #c9d8ff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.user_menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.user_button {
+  display: flex;
+  gap: 20px;
+}
+.btn_1 {
+  background: #2a67ff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.logo {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.menu_button {
+  display: none;
+}
+/* ======================== */
+
+@media only screen and (max-width: 980px) {
+  .navbar_area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bar_icon {
+    background: no-repeat;
+    border: none;
+  }
+  .bar_icon {
+    font-size: 25px;
+    width: 40px;
+    border: none;
+    background: no-repeat;
+    cursor: pointer;
+    color: #2a67ff;
+  }
+
+  .menu_button {
+    border: none;
+    background: no-repeat;
+  }
+  /* ======= */
+  .navbar_menu {
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .nav_link {
+    padding: 10px;
+    display: block;
+  }
+
+  .menu_button {
+    display: none;
+  }
+
+  .show_menu {
+    display: block !important;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    background: #fff;
+    left: 0;
+    padding: 50px;
+    transition: all 0.3s ease;
+  }
+
+  /* ==== */
+
+  .menu_button {
+    display: block;
+  }
+
+  .navbar_menu {
+    display: none;
+  }
+
+  .show_menu {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+}

@@ -1,0 +1,36 @@
+.footer_section {
+  background: #204fc5;
+  padding: 80px 7%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px;
+}
+.footer_item_title {
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.footer_list {
+  line-height: 25px;
+}
+
+.footer_list li a,
+.text_footer {
+  color: #b5b5b5;
+}
+.icon {
+  margin-top: 25px;
+  background: #dfdfdf;
+  padding: 7px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  color: #204fc5;
+}
+
+.icon_footer {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: start;
+}

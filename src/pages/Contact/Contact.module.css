@@ -1,0 +1,134 @@
+.contact_page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 7%;
+}
+
+.contact_text_area {
+  padding: 5px;
+}
+
+span.into {
+  color: #204fc5;
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+}
+
+h2.title {
+  font-size: 50px;
+  color: #222;
+  padding: 20px 0;
+}
+
+p.text {
+  color: #686868;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+button.email {
+  padding: 12px 40px;
+  font-size: 20px;
+  border: none;
+  background: #204fc5;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 35px;
+}
+/* ================= */
+.contact_form {
+  width: auto;
+  padding: 50px;
+  box-shadow: 0px 0px 50px #e7e7e7;
+  border-radius: 10px;
+  border: 1px solid #e7e7e7;
+}
+
+h3.form_title {
+  margin-bottom: 20px;
+  font-size: 25px;
+  color: #333;
+}
+
+.inputField.name_email {
+  display: flex;
+  gap: 25px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.input {
+  border: 1px solid #e7e7e7;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.email_send {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: 1px solid #f0f0f0;
+  background: transparent;
+  color: #333;
+
+  /* border: 1px solid #fff;
+  background: #204fc5;
+  color: #fff; */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.email_send:hover {
+  border: 1px solid #f0f0f0;
+  background: #204fc5;
+  color: #fff;
+}
+/* ============ */
+
+.about_task_bar {
+  background: #f9f9f9;
+  padding: 25px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title_bar {
+  font-size: 35px;
+  color: #555;
+}
+
+.back_bar {
+  display: flex;
+  gap: 0px;
+}
+
+.back_bar li {
+  color: #777;
+}
+.icon_slash {
+  color: #686868;
+  font-size: 20px;
+}
+li.about_menu {
+  color: #555;
+  font-weight: 600;
+}
