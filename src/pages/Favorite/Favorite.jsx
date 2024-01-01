@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import FavoriteCard from "../../components/FavoriteCard/FavoriteCard";
-// import styles from "./Jobs/AllJobs.module.css";
 import styles from "../../components/Jobs/AllJobs.module.css";
 const Favorite = () => {
   const [favorite, setFavorite] = useState([]);
@@ -21,13 +20,21 @@ const Favorite = () => {
   return (
     <>
       <div className={`${styles.header}`}>
-        <h2>favorite</h2>
+        <h2>{favorite.length} Favorite Jobs </h2>
       </div>
       <div className={`${styles.favorite_page}`}>
+        <div className={`${styles.noData}`}>
+          <p>
+            {noFound} <br />{" "}
+            <span className={`${styles.text}`}>
+              Please Add your favorite Jobs
+            </span>{" "}
+          </p>
+        </div>
         <div className="favorite_wrapper">
           <div className={`${styles.jobCard}`}>
             {favorite?.map((job) => (
-              <FavoriteCard job={job} />
+              <FavoriteCard key={job.id} job={job} />
             ))}
           </div>
         </div>

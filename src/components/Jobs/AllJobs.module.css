@@ -109,7 +109,30 @@
   background: #eceff7;
   font-size: 25px;
   color: #333;
+  text-align: center;
 }
 .favorite_page {
   padding: 100px 4%;
+}
+.favorite_page {
+  min-height: 30vh;
+}
+
+.noData {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noData p {
+  font-size: 35px;
+  color: #555;
+  text-align: center;
+}
+span.text {
+  font-size: 20px;
+  color: #999;
+  font-weight: normal;
+  font-family: monospace;
 }
