@@ -112,11 +112,11 @@
     display: block;
   }
 
-  .menu_button {
+  /* .menu_button {
     display: none;
-  }
+  } */
 
-  .show_menu {
+  /* .show_menu {
     display: block !important;
     position: absolute;
     width: 100%;
@@ -125,8 +125,17 @@
     left: 0;
     padding: 50px;
     transition: all 0.3s ease;
+  } */
+  .show_menu {
+    display: block !important;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    background: #fff;
+    left: 0;
+    transition: all 0.3s ease;
+    padding: 20px;
   }
-
   /* ==== */
 
   .menu_button {
