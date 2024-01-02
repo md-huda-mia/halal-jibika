@@ -10,8 +10,8 @@ import ErrorPage from "../pages/Error/ErrorPage";
 import Jobs from "../pages/Jobs/Jobs";
 import DetailsJob from "../pages/Details/DetailsJob";
 import PassForget from "../pages/ForgetPass/PassForget";
-import PrivateRoute from "./PrivateRoute";
 import FavoriteJobs from "../pages/Favorite/FavoriteJobs";
+import PrivateRoute from "./PrivetRouter";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/jobs/:position",
-        element: <DetailsJob />,
+        element: (
+          <PrivateRoute>
+            <DetailsJob />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/favorite",

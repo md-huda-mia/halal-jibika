@@ -40,6 +40,7 @@ const ContextProvider = ({ children }) => {
   // ====== Logout ========
   const logout = () => {
     setLoading(true);
+    localStorage.removeItem("user");
     return signOut(auth);
   };
 
@@ -54,8 +55,10 @@ const ContextProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       try {
         setUser(user);
+        setLoading(false);
       } catch (error) {
         console.error("Error setting user:", error);
+        setLoading(false);
       }
     });
 

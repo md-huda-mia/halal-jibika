@@ -2,31 +2,41 @@ import React from "react";
 import { CiClock2 } from "react-icons/ci";
 import styles from "./AllJobs.module.css";
 import { FaRegHeart } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
+import CustomHooks from "../../Hooks/CustomHooks";
 const JobsCard = ({ job }) => {
+  const { user } = CustomHooks();
+  const locationPath = useLocation();
   const { position, logo, company, desc, contract, vacancy, location, id } =
     job || {};
 
   // ============================
   const handleToFavorite = () => {
-    const addedFavoritesArray = [];
-    const favoriteItems = JSON.parse(localStorage.getItem("favorites"));
-    if (!favoriteItems) {
-      addedFavoritesArray.push(job);
-      localStorage.setItem("favorites", JSON.stringify(addedFavoritesArray));
-      toast.success("Good Job! added successfully!");
-    } else {
-      const isExits = favoriteItems.find((job) => job.id === id);
-      if (!isExits) {
-        addedFavoritesArray.push(...favoriteItems, job);
+    if (user) {
+      const addedFavoritesArray = [];
+      const favoriteItems = JSON.parse(localStorage.getItem("favorites"));
+      if (!favoriteItems) {
+        addedFavoritesArray.push(job);
         localStorage.setItem("favorites", JSON.stringify(addedFavoritesArray));
         toast.success("Good Job! added successfully!");
       } else {
-        toast.warning("No Add Duplicate Item");
+        const isExits = favoriteItems.find((job) => job.id === id);
+        if (!isExits) {
+          addedFavoritesArray.push(...favoriteItems, job);
+          localStorage.setItem(
+            "favorites",
+            JSON.stringify(addedFavoritesArray)
+          );
+          toast.success("Good Job! added successfully!");
+        } else {
+          toast.warning("No Add Duplicate Item");
+        }
       }
+      console.log(favoriteItems);
+    } else {
+      toast.warning("please login, you are not valid user ");
     }
-    console.log(favoriteItems);
   };
 
   // ===========================
