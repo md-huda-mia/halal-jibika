@@ -10,6 +10,8 @@ import ErrorPage from "../pages/Error/ErrorPage";
 import Jobs from "../pages/Jobs/Jobs";
 import DetailsJob from "../pages/Details/DetailsJob";
 import PassForget from "../pages/ForgetPass/PassForget";
+import PrivateRoute from "./PrivateRoute";
+import FavoriteJobs from "../pages/Favorite/FavoriteJobs";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +33,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/favorite",
-        element: <Favorite />,
+        element: (
+          <PrivateRoute>
+            <Favorite />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about",

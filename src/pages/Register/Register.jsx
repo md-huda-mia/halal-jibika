@@ -15,7 +15,7 @@ const inisialState = {
 
 const Register = () => {
   // ===============
-  const { createUser } = CustomHooks();
+  const { createUser, updateName, verifyEmail } = CustomHooks();
   const [formData, setFormData] = useState(inisialState);
   const { name, email, password, password2 } = formData;
   const navigate = useNavigate();
@@ -55,8 +55,23 @@ const Register = () => {
     createUser(formData.email, formData.password)
       .then((userCredential) => {
         const user = userCredential.user;
-        toast.success("User Create Successfully");
-        navigate(from, { replace: true });
+        //2. Update Name
+        updateName(name)
+          .then(() => {
+            toast.success("User Create Successfully");
+            //3. Email verification
+            verifyEmail()
+              .then(() => {
+                toast.success("Please check your email for verification link");
+                navigate(from, { replace: true });
+              })
+              .catch((error) => {
+                toast.error(error.message);
+              });
+          })
+          .catch((error) => {
+            toast.error(error.message);
+          });
         console.log(user);
       })
       .catch((error) => {

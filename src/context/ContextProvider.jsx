@@ -4,33 +4,48 @@ import { auth } from "../firebase/firebase.config";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  sendEmailVerification,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 export const ApiContext = createContext(null);
 
 const ContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(false);
 
   //1. ====== create user ========
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
-  //2. ======Login with Password ======
+  // 2. ====== Update Name =======
+  const updateName = (name) => {
+    setLoading(true);
+    return updateProfile(auth.currentUser, { displayName: name });
+  };
+  // 3. ========Email Verify =====
+  const verifyEmail = () => {
+    setLoading(true);
+    return sendEmailVerification(auth.currentUser);
+  };
+  //4.======Login with Password ======
   const signin = (email, password) => {
-    // setLoading(true);
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+
   // ====== Logout ========
   const logout = () => {
-    // setLoading(true);
+    setLoading(true);
     return signOut(auth);
   };
+
   //7. Forget Password
   const resetPassword = (email) => {
-    // setLoading(true);
+    setLoading(true);
     return sendPasswordResetEmail(auth, email);
   };
 
@@ -54,7 +69,10 @@ const ContextProvider = ({ children }) => {
     signin,
     user,
     resetPassword,
+    verifyEmail,
     logout,
+    updateName,
+    loading,
   };
 
   return (

@@ -1,0 +1,9 @@
+.loading {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader_Img {
+  width: 80px;
+}

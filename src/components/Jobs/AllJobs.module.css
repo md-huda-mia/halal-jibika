@@ -153,3 +153,20 @@ button.show_less {
   font-size: 18px;
   cursor: pointer;
 }
+.favorite {
+  padding: 50px;
+}
+.email_valid {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.varify_text {
+  font-size: 30px;
+  align-items: center;
+}
+.varify_text span {
+  font-size: 18px;
+  color: #555;
+}

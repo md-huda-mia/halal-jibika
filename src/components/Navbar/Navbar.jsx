@@ -17,7 +17,6 @@ const Navbar = () => {
     <div className={`${styles.navbar_section} section_padding`}>
       <div className={`${styles.navbar_area}`}>
         <div className={`${styles.logo}`}>
-          {/* Use the onClick event for the toggle button */}
           <button
             className={`${styles.bar_icon} ${styles.menu_button}`}
             onClick={toggleMenu}>
@@ -31,36 +30,62 @@ const Navbar = () => {
           </h3>
         </div>
 
-        {/* Use a conditional class to show/hide the mobile menu */}
         <ul
           className={`${styles.navbar_menu} ${
             menuOpen ? styles.show_menu : ""
           }`}>
-          <li>
-            <NavLink to="/" className={`${styles.nav_link}`}>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className={`${styles.nav_link}`} to="/jobs">
-              Find Jobs
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className={`${styles.nav_link}`} to="/favorite">
-              Favorite
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className={`${styles.nav_link}`} to="/about">
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className={`${styles.nav_link}`} to="/contact">
-              Contact
-            </NavLink>
-          </li>
+          {user ? (
+            <>
+              <li>
+                <NavLink to="/" className={`${styles.nav_link}`}>
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={`${styles.nav_link}`} to="/jobs">
+                  Find Jobs
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={`${styles.nav_link}`} to="/favorite">
+                  Favorite
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={`${styles.nav_link}`} to="/about">
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={`${styles.nav_link}`} to="/contact">
+                  Contact
+                </NavLink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/" className={`${styles.nav_link}`}>
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={`${styles.nav_link}`} to="/jobs">
+                  Find Jobs
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={`${styles.nav_link}`} to="/about">
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className={`${styles.nav_link}`} to="/contact">
+                  Contact
+                </NavLink>
+              </li>
+            </>
+          )}
         </ul>
 
         <div className={`${styles.user_menu}`}>
