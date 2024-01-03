@@ -2,9 +2,14 @@
 .details_page {
   padding: 50px 7%;
 }
+section.detailPage {
+  padding-top: 160px;
+}
+
 .container {
   width: 800px;
   margin: 0 auto;
+  z-index: 99;
 }
 .details__wrapper {
   margin-top: -110px;
@@ -12,18 +17,61 @@
   background: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 15px #dddddd;
+  z-index: 99;
 }
-
+.detail_thumb {
+  margin-bottom: 1.5rem;
+}
+.detail_thumb img {
+  max-height: 70vh;
+  object-fit: cover;
+}
 .details__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.com_top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.com_top img {
+  width: 75px;
+}
 
+.com_info h1 {
+  font-size: 25px;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+
+.com_info h6 {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 0.3rem;
+}
+
+.com_info span {
+  color: #666;
+  font-size: 18px;
+}
+
+/* ========= */
 .details__top {
   margin-bottom: 30px;
 }
-
+.user_btn button {
+  cursor: pointer;
+}
+.user_btn .btn_1 {
+  background: #7c5dfa;
+  color: #fff;
+}
+.user_btn .btn_2 {
+  background: #fa5d6a;
+  color: #fff;
+}
 .details__top button {
   padding: 7px 25px;
 
@@ -74,9 +122,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 1.5rem;
 }
-
+.vacancy {
+  color: #666666;
+}
 .job__desc {
   line-height: 30px;
   margin-bottom: 20px;

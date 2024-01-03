@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,5 +8,63 @@
   text-decoration: none;
   box-sizing: border-box;
 }
-.section_padding {
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  background: #eff2fa;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.section {
+  padding: 60px 5%;
+}
+.btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: #eee7da;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: black;
+}
+.btn:hover {
+  background: #222;
+  color: white;
+}
+.center {
+  text-align: center;
+  padding-top: 5rem;
+  margin-inline: auto;
+  display: block;
+  width: 100%;
+}
+.btn-primary {
+  background: #fcf;
+  color: white;
+}
+.Page-page h2 {
+  margin-top: 1.5rem;
+}
+
+/* ============ */
+@media screen and (max-width) {
+  h1 {
+  }
+  h2 {
+  }
+  h3 {
+  }
+  .container {
+    width: 90%;
+  }
 }

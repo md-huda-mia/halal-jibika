@@ -8,7 +8,7 @@
 
 .social_trust {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   align-items: center;
   justify-content: space-between;
   gap: 50px;
@@ -60,17 +60,17 @@
 }
 /* ========= */
 .holdsUsBanner {
-  /* background: #e2e2e2; */
   background: #f7f7f8;
   padding: 50px;
   border-radius: 10px;
   display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr)); */
   justify-content: space-between;
-  align-items: center;
   margin-top: 50px;
 }
 
 .banner_text h1 {
+  font-size: clamp(20px, 5vw, 30px);
   color: #204fc5;
   margin-bottom: 10px;
 }
@@ -92,4 +92,10 @@ button.btn:hover {
   background: #204fc5;
   color: #fff;
   cursor: pointer;
+}
+@media screen and (max-width: 980px) {
+  .holdsUsBanner {
+    flex-direction: column;
+    gap: 30px;
+  }
 }

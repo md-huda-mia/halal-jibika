@@ -3,10 +3,11 @@
   padding: 100px 7%;
   display: flex;
   align-items: center;
+  gap: 30px;
   justify-content: space-between;
 }
 .hero_title {
-  font-size: 50px;
+  font-size: clamp(30px, 8vw, 45px);
   margin-bottom: 30px;
 }
 .hero_text {
@@ -30,4 +31,12 @@
   background: transparent;
   color: black;
   border: 1px solid #686868;
+}
+@media screen and (max-width: 980px) {
+  .hero_section {
+    flex-direction: column;
+  }
+  .hero_content {
+    margin-bottom: 50px;
+  }
 }

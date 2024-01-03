@@ -1,116 +1,86 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { HiMiniBars3CenterLeft } from "react-icons/hi2";
+
+import { MdOutlineClose } from "react-icons/md";
 import styles from "./Navbar.module.css";
-import { NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
-import CustomHooks from "../../Hooks/CustomHooks";
-import { FaTimes } from "react-icons/fa";
-
+import { TbUfo } from "react-icons/tb";
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const { user, logout } = CustomHooks();
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const [isNavShowing, setIsNavShowing] = useState(
+    window.innerWidth > 980 ? true : false
+  );
+  const closeNavHandler = () => {
+    if (window.innerWidth < 980) {
+      setIsNavShowing(false);
+    } else {
+      setIsNavShowing(true);
+    }
   };
-
   return (
-    <div className={`${styles.navbar_section} section_padding`}>
-      <div className={`${styles.navbar_area}`}>
-        <div className={`${styles.logo}`}>
+    <div className="navbar_section">
+      <nav>
+        <div className={`${styles.container} ${styles.nav_container}`}>
+          <Link
+            to="/"
+            className={`${styles.nav_logo}`}
+            onClick={closeNavHandler}>
+            <img
+              className={`${styles.logo_img}`}
+              src="https://i.ibb.co/yNK9kLr/Logo.png"
+              alt=""
+            />
+          </Link>
+          {isNavShowing && (
+            <ul className={`${styles.nav_menu}`}>
+              <li>
+                <Link to="/" onClick={closeNavHandler}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/jobs" onClick={closeNavHandler}>
+                  All Jobs
+                </Link>
+              </li>
+              <li>
+                <Link to="/favorite" onClick={closeNavHandler}>
+                  Favorites
+                </Link>{" "}
+              </li>
+              <li>
+                <Link to="/about" onClick={closeNavHandler}>
+                  About
+                </Link>{" "}
+              </li>
+              <li>
+                <Link to="/contact" onClick={closeNavHandler}>
+                  Contact
+                </Link>{" "}
+              </li>
+              <li>
+                <Link to="/login" onClick={closeNavHandler}>
+                  Login
+                </Link>{" "}
+              </li>
+              <li>
+                <Link to="/createpost" onClick={closeNavHandler}>
+                  Register
+                </Link>{" "}
+              </li>
+              <li>
+                <Link to="/register" onClick={closeNavHandler}>
+                  LogOut
+                </Link>{" "}
+              </li>
+            </ul>
+          )}
           <button
-            className={`${styles.bar_icon} ${styles.menu_button}`}
-            onClick={toggleMenu}>
-            <FaBars />
+            onClick={() => setIsNavShowing(!isNavShowing)}
+            className={`${styles.Nav_toggle_btn}`}>
+            {isNavShowing ? <MdOutlineClose /> : <HiMiniBars3CenterLeft />}
           </button>
-
-          {/* ============ */}
-
-          <h3 className={`${styles.logo_text}`}>
-            Halal<span className={`${styles.logo_Span}`}>Jibika</span>{" "}
-          </h3>
         </div>
-
-        <ul
-          className={`${styles.navbar_menu} ${
-            menuOpen ? styles.show_menu : ""
-          }`}>
-          {user ? (
-            <>
-              <li>
-                <NavLink to="/" className={`${styles.nav_link}`}>
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className={`${styles.nav_link}`} to="/jobs">
-                  Find Jobs
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className={`${styles.nav_link}`} to="/favorite">
-                  Favorite
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className={`${styles.nav_link}`} to="/about">
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className={`${styles.nav_link}`} to="/contact">
-                  Contact
-                </NavLink>
-              </li>
-            </>
-          ) : (
-            <>
-              <li>
-                <NavLink to="/" className={`${styles.nav_link}`}>
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className={`${styles.nav_link}`} to="/jobs">
-                  Find Jobs
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className={`${styles.nav_link}`} to="/about">
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className={`${styles.nav_link}`} to="/contact">
-                  Contact
-                </NavLink>
-              </li>
-            </>
-          )}
-        </ul>
-
-        <div className={`${styles.user_menu}`}>
-          {user?.email ? (
-            <>
-              <img
-                className={`${styles.userImg}`}
-                src="https://i.ibb.co/0J4FH5f/Zrks-Pz-H5-Aadq.gif"
-                alt=""
-              />
-              <button onClick={logout} className={`${styles.btn_1}`}>
-                LogOut
-              </button>
-            </>
-          ) : (
-            <>
-              <div className={`${styles.user_button}`}>
-                <NavLink to="/register">
-                  <button className={`${styles.btn_1}`}>Register</button>
-                </NavLink>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
+      </nav>
     </div>
   );
 };

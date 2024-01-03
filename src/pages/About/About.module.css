@@ -9,14 +9,14 @@
 
 .about_task_bar {
   background: #f9f9f9;
-  padding: 25px 7%;
+  padding: 90px 7% 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .title_bar {
-  font-size: 35px;
+  font-size: clamp(22px, 8vw, 35px);
   color: #555;
 }
 
@@ -48,4 +48,13 @@ li.about_menu {
   color: #686868;
   line-height: 25px;
   font-size: 18px;
+}
+@media screen and (max-width: 980px) {
+  .about_detailts.about_detailts_reverse {
+    display: inline-flex !important;
+    flex-direction: column-reverse !important;
+  }
+  .about_detailts {
+    grid-template-columns: 1fr;
+  }
 }

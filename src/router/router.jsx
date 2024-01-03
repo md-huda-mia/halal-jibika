@@ -8,10 +8,11 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Register/Login";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Jobs from "../pages/Jobs/Jobs";
-import DetailsJob from "../pages/Details/DetailsJob";
 import PassForget from "../pages/ForgetPass/PassForget";
 import FavoriteJobs from "../pages/Favorite/FavoriteJobs";
 import PrivateRoute from "./PrivetRouter";
+import CreatePost from "../pages/CreatePost/CreatePost";
+import DetailsPage from "../pages/Details/DetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -28,10 +29,10 @@ const router = createBrowserRouter([
         element: <Jobs />,
       },
       {
-        path: "/jobs/:position",
+        path: "/jobs/:id",
         element: (
           <PrivateRoute>
-            <DetailsJob />
+            <DetailsPage />
           </PrivateRoute>
         ),
       },
@@ -52,8 +53,8 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/register",
-        element: <Register />,
+        path: "/createpost",
+        element: <CreatePost />,
       },
       {
         path: "/login",

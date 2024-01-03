@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const Hero = () => {
   return (
     <div className={`${styles.hero_section}`}>
-      <div className="hero_content">
+      <div className={`${styles.hero_content}`}>
         <h1 className={`${styles.hero_title}`}>
           Find a job that suits <br /> your interest & skills.
         </h1>

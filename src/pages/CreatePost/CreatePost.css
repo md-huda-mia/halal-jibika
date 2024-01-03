@@ -1,0 +1,60 @@
+.create-post {
+  padding: 120px;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.container h2 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.container > p {
+  color: #fafafa;
+  margin-bottom: 12px;
+  background: #dc4444;
+  padding: 5px 17px;
+}
+form.form.create_post_form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input[type="text"] {
+  padding: 5px;
+  font-size: 18px;
+  color: #767676;
+  border: 1px solid #ddd;
+}
+
+select {
+  padding: 7px 5px;
+  font-size: 17px;
+  color: #767676;
+  border: 1px solid #ddd;
+}
+
+.ql-editor {
+  overflow: scroll;
+  background: white;
+  height: 12rem !important;
+}
+.ql-editor p {
+  font-size: 18px;
+}
+input[type="file"] {
+  padding: 10px;
+  font-size: 20px;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+button.btn.primary {
+  background: #204ec3;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 25px;
+  color: #fff;
+}

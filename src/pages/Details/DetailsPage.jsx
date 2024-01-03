@@ -1,41 +1,47 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import jobs from "../../assets/data";
 import styles from "./DetailsJob.module.css";
-import JobTopHead from "../FindJobs/JobTopHead";
+import jobs from "../../assets/data";
 
-const DetailsJob = () => {
-  const { position } = useParams();
-  const job = jobs.find((job) => job.position == position);
+const DetailsPage = () => {
+  const { id } = useParams();
+  const job = jobs.find((job) => job.id == id);
+  console.log(job);
   return (
-    <section>
-      <JobTopHead />
+    <section className={`${styles.detailPage}`}>
       <div className={`${styles.details_page}`}>
         <div className={`${styles.container}`}>
           <div className={`${styles.details__wrapper}`}>
             <div className={`${styles.details__top}`}>
-              <div>
-                <h1>{job.company}</h1>
+              <div className={`${styles.com_top}`}>
+                {/* <img src={job.logo} alt="" /> */}
+                <div className={`${styles.com_info}`}>
+                  <h1>{job.company}</h1>
+                  <h6>
+                    {job.postedAt} - {job.contract}
+                  </h6>
+
+                  <span>{job.location}</span>
+                </div>
               </div>
 
-              <button>
-                <Link to={job.companySite}>Company Site</Link>
-              </button>
+              <div className={`${styles.user_btn}`}>
+                <button className={`${styles.btn_1}`}>Edit</button> {""}
+                <button className={`${styles.btn_2}`}>Delete</button>
+              </div>
             </div>
 
             <div className={`${styles.job__details}`}>
               <div className={`${styles.about__job}`}>
-                <div>
-                  <h6>
-                    {job.postedAt} - {job.contract}
-                  </h6>
+                <div className="">
                   <h1>{job.position}</h1>
-                  <span>{job.location}</span>
+                  <h3 className={`${styles.vacancy}`}>{job.vacancy}</h3>
                 </div>
-
                 <button className={`${styles.btn}`}>Apply</button>
               </div>
-
+              <div className={`${styles.detail_thumb}`}>
+                <img src={job.thumbnail} alt="" />
+              </div>
               <p className={`${styles.job__desc}`}>{job.desc}</p>
               <div className={`${styles.requirements}`}>
                 <h1>Requirements</h1>
@@ -66,4 +72,4 @@ const DetailsJob = () => {
   );
 };
 
-export default DetailsJob;
+export default DetailsPage;

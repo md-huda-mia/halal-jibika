@@ -132,3 +132,9 @@ li.about_menu {
   color: #555;
   font-weight: 600;
 }
+@media screen and (max-width: 980px) {
+  .contact_page {
+    flex-direction: column;
+    gap: 60px;
+  }
+}

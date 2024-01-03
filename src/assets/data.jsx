@@ -4,7 +4,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Web-developer",
     company: "Google",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "Senior Frontend Developer",
     postedAt: "1d ago",
     contract: "Full Time",
@@ -39,7 +40,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Fullstack Developer",
     company: "Microsoft Inc.",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "Fullstack Developer",
     postedAt: "1d ago",
     contract: "Freelancer",
@@ -74,7 +76,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Junior Developer",
     company: "Facebook",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "Junior Frontend Developer",
     postedAt: "2d ago",
     contract: "Part Time",
@@ -109,7 +112,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Manager",
     company: "Amazon",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "Desktop Support Manager",
     postedAt: "5d ago",
     contract: "Contract",
@@ -144,7 +148,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Engineer",
     company: "Google",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "Remote DevOps Engineer",
     postedAt: "1w ago",
     contract: "Part Time",
@@ -179,7 +184,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Senior Engineer",
     company: "Amazon",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "Senior Application Engineer",
     postedAt: "2w ago",
     contract: "Full Time",
@@ -214,7 +220,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Technical Engineer",
     company: "Facebook",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "Technical Lead Engineer",
     postedAt: "2w ago",
     contract: "Full Time",
@@ -249,7 +256,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Website Designer ",
     company: "Twiter",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "App and Website Designer",
     postedAt: "2w ago",
     contract: "Freelance",
@@ -284,7 +292,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Engineer",
     company: "Microsoft",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "IOS Engineer",
     postedAt: "3w ago",
     contract: "Full Time",
@@ -319,7 +328,8 @@ const jobs = [
     companySite: "#",
     vacancy: "Front-end",
     company: "Google",
-    logo: "https://i.ibb.co/9NhtjMG/7123025-logo-google-g-icon.png",
+    thumbnail:
+      "https://i.ibb.co/G3LqV3b/registration-application-paper-form-concept-53876-167141.jpg",
     position: "Front-end Dev",
     postedAt: "1mo ago",
     contract: "Part Time",

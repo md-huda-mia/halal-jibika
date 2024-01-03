@@ -13,7 +13,8 @@ const About = () => {
         </div>
       </div>
       {/* ==== */}
-      <div className={`${styles.about_detailts}`}>
+      <div
+        className={`${styles.about_detailts} ${styles.about_detailts_reverse}`}>
         <div className={`${styles.about_content}`}>
           <h2 className={`${styles.about_info_title}`}>
             Lorem ipsum dolor sit amet.
@@ -73,7 +74,8 @@ const About = () => {
         </div>
       </div>
       {/* ==== */}
-      <div className={`${styles.about_detailts}`}>
+      <div
+        className={`${styles.about_detailts} ${styles.about_detailts_reverse}`}>
         <div className={`${styles.about_content}`}>
           <h2 className={`${styles.about_info_title}`}>
             Lorem ipsum dolor sit amet.

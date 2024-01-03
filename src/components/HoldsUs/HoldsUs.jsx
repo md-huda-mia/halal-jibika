@@ -69,7 +69,7 @@ const HoldsUs = () => {
           <h1>Ready to switch a career?</h1>
           <h2>Let's get started!</h2>
         </div>
-        <div className="banner_btn">
+        <div className={`${styles.banner_btn}`}>
           <button className={styles.btn}>Get Started</button>
         </div>
       </div>
