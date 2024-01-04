@@ -62,6 +62,7 @@ const CreatePost = () => {
             onChange={(e) => setTitle(e.target.value)}
             autoFocus
           />
+
           <select
             name="category"
             value={category}
@@ -78,6 +79,13 @@ const CreatePost = () => {
               <option key={cat}>{cat}</option>
             ))}
           </select>
+          <input
+            type="text"
+            placeholder="Your Loacation"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            autoFocus
+          />
           <ReactQuill
             modules={modules}
             formats={formates}
@@ -86,6 +94,7 @@ const CreatePost = () => {
           />
           <input
             type="file"
+            value={thumbnail}
             onChange={(e) => sethumbnail(e.target.files[0])}
             accept="png, jpg, jpeg"
           />

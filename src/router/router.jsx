@@ -13,6 +13,7 @@ import FavoriteJobs from "../pages/Favorite/FavoriteJobs";
 import PrivateRoute from "./PrivetRouter";
 import CreatePost from "../pages/CreatePost/CreatePost";
 import DetailsPage from "../pages/Details/DetailsPage";
+import User from "../pages/UserPage/User";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/createpost",
         element: <CreatePost />,
+      },
+      {
+        path: "/user",
+        element: <User />,
       },
       {
         path: "/login",

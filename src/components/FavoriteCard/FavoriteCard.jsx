@@ -17,7 +17,7 @@ const FavoriteCard = ({ job, deleteHandler }) => {
     id,
   } = job || {};
   return (
-    <div className="post">
+    <div className="post favorite_post">
       <div className="post_thumbnail">
         <img src={thumbnail} alt="" />
       </div>

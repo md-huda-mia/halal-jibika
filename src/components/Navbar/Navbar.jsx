@@ -5,7 +5,11 @@ import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { MdOutlineClose } from "react-icons/md";
 import styles from "./Navbar.module.css";
 import { TbUfo } from "react-icons/tb";
+import CustomHooks from "../../Hooks/CustomHooks";
+
 const Navbar = () => {
+  const { user } = CustomHooks();
+
   const [isNavShowing, setIsNavShowing] = useState(
     window.innerWidth > 980 ? true : false
   );
@@ -47,7 +51,7 @@ const Navbar = () => {
                   Favorites
                 </Link>{" "}
               </li>
-              <li>
+              {/* <li>
                 <Link to="/about" onClick={closeNavHandler}>
                   About
                 </Link>{" "}
@@ -56,6 +60,16 @@ const Navbar = () => {
                 <Link to="/contact" onClick={closeNavHandler}>
                   Contact
                 </Link>{" "}
+              </li> */}
+              <li>
+                <Link to="/user" onClick={closeNavHandler}>
+                  {user.displayName}
+                </Link>{" "}
+              </li>
+              <li>
+                <Link to="/createpost" onClick={closeNavHandler}>
+                  Create Post
+                </Link>{" "}
               </li>
               <li>
                 <Link to="/login" onClick={closeNavHandler}>
@@ -63,12 +77,7 @@ const Navbar = () => {
                 </Link>{" "}
               </li>
               <li>
-                <Link to="/createpost" onClick={closeNavHandler}>
-                  Register
-                </Link>{" "}
-              </li>
-              <li>
-                <Link to="/register" onClick={closeNavHandler}>
+                <Link to="" onClick={closeNavHandler}>
                   LogOut
                 </Link>{" "}
               </li>
