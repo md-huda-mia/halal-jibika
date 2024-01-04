@@ -61,11 +61,11 @@ const Navbar = () => {
                   Contact
                 </Link>{" "}
               </li> */}
-              <li>
+              {/* <li>
                 <Link to="/user" onClick={closeNavHandler}>
                   {user.displayName}
                 </Link>{" "}
-              </li>
+              </li> */}
               <li>
                 <Link to="/createpost" onClick={closeNavHandler}>
                   Create Post
