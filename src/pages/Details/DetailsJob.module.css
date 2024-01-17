@@ -61,30 +61,38 @@ section.detailPage {
 .details__top {
   margin-bottom: 30px;
 }
-.user_btn button {
+.user_btn {
+  display: flex;
+  gap: 10px;
+}
+.user_btn a {
   cursor: pointer;
+  border-radius: 5px;
+  border: none;
 }
 .user_btn .btn_1 {
   background: #7c5dfa;
   color: #fff;
+  padding: 7px 25px;
 }
 .user_btn .btn_2 {
   background: #fa5d6a;
   color: #fff;
+  padding: 7px 25px;
 }
-.details__top button {
+/* .details__top a {
   padding: 7px 25px;
 
   border-radius: 5px;
   background: #7c5dfa3b;
-  border: none;
-}
 
-.details__top button a {
+} */
+
+/* .details__top a {
   text-decoration: none;
   color: #7c5dfa;
   font-size: 0.9rem;
-}
+} */
 
 .about__job h6 {
   font-size: 0.9rem;

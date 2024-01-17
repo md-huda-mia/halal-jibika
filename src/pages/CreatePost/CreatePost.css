@@ -21,7 +21,7 @@ form.form.create_post_form {
   flex-direction: column;
   gap: 15px;
 }
-input[type="text"] {
+.creInput {
   padding: 5px;
   font-size: 18px;
   color: #767676;

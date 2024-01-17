@@ -18,7 +18,7 @@ const AllJobs = ({ jobData, searchTermValue, searchTerm }) => {
               return job;
           })
           .map((job) => (
-            <JobsCard key={job.id} job={job} />
+            <JobsCard key={job._id} job={job} />
           ))}
       </div>
     </div>

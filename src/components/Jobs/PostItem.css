@@ -13,7 +13,10 @@ img {
   padding-bottom: 2rem;
   cursor: pointer;
 }
-
+.post_content h3 a {
+  color: #111;
+  font-size: 18px;
+}
 .post:hover {
   box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.1);
 }

@@ -39,6 +39,9 @@ nav {
   align-items: center;
   gap: 2.5rem;
 }
+.nav_menu li a {
+  color: #222;
+}
 /* ========================= */
 
 /* ============ */

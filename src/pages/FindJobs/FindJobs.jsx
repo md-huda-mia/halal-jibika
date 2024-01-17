@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
 import { IoLocation } from "react-icons/io5";
 import jobs from "../../assets/data";
 import styles from "./FindJobs.module.css";
 import AllJobs from "../../components/Jobs/AllJobs";
-
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import axios from "axios";
 const FindJobs = () => {
-  const [jobData, setJobData] = useState(jobs);
+  const [jobData, setJobData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchByLocation, setSearchByLocation] = useState("");
   const searchTermValue = searchTerm.toLowerCase();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   //   ======== search data by location =====
   const locationSearchHandler = () => {
@@ -40,6 +43,24 @@ const FindJobs = () => {
       setJobData(jobs);
     }
   };
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setIsLoading(true);
+      try {
+        const res = await axios.get(`${import.meta.env.VITE_URL}/posts`);
+        setJobData(res?.data);
+      } catch (error) {
+        console.log(error);
+      }
+      setIsLoading(false);
+    };
+    fetchPosts();
+  }, []);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className={`${styles.job_list}`}>

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import "./CreatePost.css";
+import React, { useContext, useEffect, useState } from "react";
+import "../CreatePost/CreatePost";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 const EditPage = () => {
   const [title, setTitle] = useState("");
   const [thumbnail, sethumbnail] = useState("");
@@ -9,6 +11,18 @@ const EditPage = () => {
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [jobCategory, setJobCategory] = useState("jobCategorize");
+
+  // =========
+  const navigate = useNavigate();
+  const { currentUser } = useContext(UserContext);
+
+  const token = currentUser?.token;
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/login");
+    }
+  }, []);
 
   const modules = {
     toolbar: [
@@ -56,6 +70,7 @@ const EditPage = () => {
         <p className="form_error_message">This is an error message</p>
         <form action="" className="form create_post_form">
           <input
+            className="creInput"
             type="text"
             placeholder="Title"
             value={title}
@@ -78,6 +93,14 @@ const EditPage = () => {
               <option key={cat}>{cat}</option>
             ))}
           </select>
+          <input
+            className="creInput"
+            type="text"
+            placeholder="Your Loacation"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            autoFocus
+          />
           <ReactQuill
             modules={modules}
             formats={formates}

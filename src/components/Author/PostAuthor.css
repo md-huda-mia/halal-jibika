@@ -1,0 +1,14 @@
+.Post_atuhor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.user_avatar {
+  width: 50px;
+}
+.post_author_details h4 {
+  color: #333;
+}
+.post_author_details small {
+  color: #555;
+}

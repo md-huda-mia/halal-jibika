@@ -14,11 +14,19 @@ import PrivateRoute from "./PrivetRouter";
 import CreatePost from "../pages/CreatePost/CreatePost";
 import DetailsPage from "../pages/Details/DetailsPage";
 import User from "../pages/UserPage/User";
+import UserProvider from "../context/UserContext";
+import LogOut from "../components/Logout/LogOut";
+import EditPage from "../pages/EditPage/EditPage";
+import AuthorPost from "../pages/AuthorPost/AuthorPost";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: (
+      <UserProvider>
+        <MainLayout />
+      </UserProvider>
+    ),
     errorElement: <ErrorPage />,
     children: [
       {
@@ -31,19 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/jobs/:id",
-        element: (
-          <PrivateRoute>
-            <DetailsPage />
-          </PrivateRoute>
-        ),
+        element: <DetailsPage />,
       },
       {
         path: "/favorite",
-        element: (
-          <PrivateRoute>
-            <Favorite />
-          </PrivateRoute>
-        ),
+        element: <Favorite />,
       },
       {
         path: "/about",
@@ -58,12 +58,28 @@ const router = createBrowserRouter([
         element: <CreatePost />,
       },
       {
+        path: "/post/users/:id",
+        element: <EditPage />,
+      },
+      {
         path: "/user",
         element: <User />,
       },
       {
+        path: "/user/:id",
+        element: <AuthorPost />,
+      },
+      {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/logout",
+        element: <LogOut />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "/forgetpassword",

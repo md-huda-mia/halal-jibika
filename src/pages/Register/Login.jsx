@@ -1,39 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Register.module.css";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import CustomHooks from "../../Hooks/CustomHooks";
 import PasswordInput from "./PasswordInput";
-// =========
-const inisialState = {
-  email: "",
-  password: "",
-};
+import axios from "axios";
+import { UserContext } from "../../context/UserContext";
+
 const Login = () => {
-  const [formData, setFormData] = useState(inisialState);
-  const { email, password } = formData;
-  const { signin, resetPassword, signInWithGoogle } = CustomHooks();
+  // ============
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
+  const { setCurrentUser } = useContext(UserContext);
+  // ===============
+  const [error, setError] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  const { VITE_URL } = import.meta.env;
+
   const handleInputChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
-  const loginUser = (e) => {
+  const loginUser = async (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    signin(formData.email, formData.password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        navigate(from, { replace: true });
-        console.log("User:", user);
-      })
-      .catch((error) => {
-        console.log("Login Error:", error);
-      });
+    setError("");
+
+    try {
+      const response = await axios.post(`${VITE_URL}/users/login`, userData);
+      const user = await response.data;
+      setCurrentUser(user);
+      navigate("/");
+    } catch (error) {
+      setError(error.response.data.message);
+    }
   };
 
   return (
@@ -49,13 +49,14 @@ const Login = () => {
           </p>
         </div>
         <form onSubmit={loginUser} className={`${styles.form}`}>
+          {error && <p className={`${styles.error_message}`}>{error}</p>}
           <div className={`${styles.input_field}`}>
             <input
               className={`${styles.inputText} ${styles.input}`}
               type="text"
               placeholder="Email Address"
               name="email"
-              value={email}
+              value={userData.email}
               onChange={handleInputChange}
               required
             />
@@ -63,7 +64,7 @@ const Login = () => {
           <PasswordInput
             placeholder="Password"
             name="password"
-            value={password}
+            value={userData.password}
             onChange={handleInputChange}
           />
           {/* ======= */}

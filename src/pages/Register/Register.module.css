@@ -36,7 +36,9 @@ img {
 .form {
   width: 100%;
 }
-
+.error_message {
+  color: red;
+}
 .input_field {
   width: 100%;
   padding: 10px 0;

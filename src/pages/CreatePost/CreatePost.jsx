@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./CreatePost.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { UserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [thumbnail, sethumbnail] = useState("");
@@ -9,6 +11,18 @@ const CreatePost = () => {
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [jobCategory, setJobCategory] = useState("jobCategorize");
+
+  // =========
+  const navigate = useNavigate();
+  const { currentUser } = useContext(UserContext);
+
+  const token = currentUser?.token;
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/login");
+    }
+  }, []);
 
   const modules = {
     toolbar: [
@@ -39,13 +53,14 @@ const CreatePost = () => {
     "image",
   ];
   const POST_CATEGORIES = [
-    "Freelancer",
-    "Web-developer",
+    "App Developer",
+    "Web Developer",
     "Business",
-    "Teaching",
-    "Full-Time",
-    "Junior-web-developer",
+    "Seo Expart",
+    "Education",
+    "Junior Web Developer",
     "Desinger",
+    "Investment",
   ];
   const JOBS_CATEGORIES = ["Full-Time", "Part-Time", "Remote"];
 
@@ -56,6 +71,7 @@ const CreatePost = () => {
         <p className="form_error_message">This is an error message</p>
         <form action="" className="form create_post_form">
           <input
+            className="creInput"
             type="text"
             placeholder="Title"
             value={title}
@@ -80,6 +96,7 @@ const CreatePost = () => {
             ))}
           </select>
           <input
+            className="creInput"
             type="text"
             placeholder="Your Loacation"
             value={location}
@@ -93,6 +110,7 @@ const CreatePost = () => {
             onChange={setDescription}
           />
           <input
+            className="creInput"
             type="file"
             value={thumbnail}
             onChange={(e) => sethumbnail(e.target.files[0])}
@@ -100,7 +118,7 @@ const CreatePost = () => {
           />
           <button type="submit" className="btn primary">
             {" "}
-            Create
+            Create New Post
           </button>
         </form>
       </div>
