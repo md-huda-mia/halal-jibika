@@ -58,9 +58,7 @@ const CreatePost = () => {
     "Business",
     "Seo Expart",
     "Education",
-    "Junior Web Developer",
-    "Desinger",
-    "Investment",
+    "Designer",
   ];
   const JOBS_CATEGORIES = ["Full-Time", "Part-Time", "Remote"];
 

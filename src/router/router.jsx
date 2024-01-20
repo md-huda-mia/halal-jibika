@@ -18,6 +18,7 @@ import UserProvider from "../context/UserContext";
 import LogOut from "../components/Logout/LogOut";
 import EditPage from "../pages/EditPage/EditPage";
 import AuthorPost from "../pages/AuthorPost/AuthorPost";
+import CategoryPost from "../components/CategoryItem/categoryPost";
 
 const router = createBrowserRouter([
   {
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
         element: <CreatePost />,
       },
       {
-        path: "/post/users/:id",
+        path: "/post/:id",
         element: <EditPage />,
       },
       {
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
         element: <User />,
       },
       {
-        path: "/user/:id",
+        path: "/posts/users/:id",
         element: <AuthorPost />,
       },
       {
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: "/forgetpassword",
         element: <PassForget />,
+      },
+      {
+        path: "/posts/categories/:category",
+        element: <CategoryPost />,
       },
     ],
   },

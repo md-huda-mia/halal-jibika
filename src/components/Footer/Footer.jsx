@@ -6,19 +6,22 @@ const Footer = () => {
     <footer>
       <ul className={`${styles.footer_categories}`}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/posts/categories/App Developer">App Developer</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/posts/categories/Web Developer">Web Developer</Link>
         </li>
         <li>
-          <Link to="/jobs">All Jobs</Link>
+          <Link to="/posts/categories/Seo Expart">Seo Expart</Link>
         </li>
         <li>
-          <Link to="/favorite">Favorite Jobs</Link>
+          <Link to="/posts/categories/Business">Business</Link>
         </li>
         <li>
-          <Link to="/register">Register</Link>
+          <Link to="/posts/categories/Designer">Designer</Link>
+        </li>
+        <li>
+          <Link to="/posts/categories/Education">Education</Link>
         </li>
       </ul>
       <div className={`${styles.footer_copy_right}`}>

@@ -15,7 +15,7 @@ const JobsCard = ({ job }) => {
     title,
     description,
     creator,
-    contract,
+    category,
     createdAt,
     vacancy,
   } = job || {};
@@ -63,7 +63,9 @@ const JobsCard = ({ job }) => {
         <div className="auth_info">
           <PostAuthor createdAt={createdAt} authorID={creator} />
         </div>
-        <span className="contract">{contract}</span>
+        <Link to={`/posts/categories/${category}`}>
+          <span className="contract">{category}</span>
+        </Link>
       </div>
       <div className="post_btn">
         <Link to={`/jobs/${id}`}>

@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import JobsCard from "../../components/Jobs/JobsCard";
 import axios from "axios";
-import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
-import "./AuthorPost.css";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import JobsCard from "../Jobs/JobsCard";
+import "./CategoryPost.css";
 
-const AuthorPost = () => {
+const CategoryPost = () => {
   const [jobData, setJobData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { id } = useParams();
+  const { category } = useParams();
   useEffect(() => {
     const fetchPosts = async () => {
       setIsLoading(true);
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_URL}/posts/users/${id}`
+          `${import.meta.env.VITE_URL}/posts/categories/${category}`
         );
         setJobData(res?.data);
       } catch (error) {
@@ -24,7 +24,7 @@ const AuthorPost = () => {
       setIsLoading(false);
     };
     fetchPosts();
-  }, []);
+  }, [category]);
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -34,9 +34,9 @@ const AuthorPost = () => {
     <div className="posts">
       {jobData.length > 0 ? (
         <>
-          <div className="container posts_container">
+          <div className=" posts_container">
             {jobData.map((job) => (
-              <JobsCard job={job} />
+              <JobsCard key={job._id} job={job} />
             ))}
           </div>
         </>
@@ -51,4 +51,4 @@ const AuthorPost = () => {
   );
 };
 
-export default AuthorPost;
+export default CategoryPost;

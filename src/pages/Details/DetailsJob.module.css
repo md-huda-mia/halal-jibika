@@ -77,7 +77,7 @@ section.detailPage {
 }
 .user_btn .btn_2 {
   background: #fa5d6a;
-  color: #fff;
+  color: #fff !important;
   padding: 7px 25px;
 }
 /* .details__top a {

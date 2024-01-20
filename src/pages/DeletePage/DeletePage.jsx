@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 
 const DeletePage = () => {
@@ -15,7 +15,11 @@ const DeletePage = () => {
     }
   }, []);
 
-  return <Link className="delete-btn">Delete</Link>;
+  return (
+    <Link className="delete-btn" style={{ color: "#fff" }}>
+      Delete
+    </Link>
+  );
 };
 
 export default DeletePage;

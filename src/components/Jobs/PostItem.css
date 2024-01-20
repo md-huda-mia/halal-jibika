@@ -23,7 +23,6 @@ img {
 .post_thumbnail {
   border-radius: 1rem;
   overflow: hidden;
-  height: 15rem;
 }
 .post_content {
   margin-top: 1.5rem;

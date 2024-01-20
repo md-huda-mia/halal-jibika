@@ -9,11 +9,14 @@ footer {
   background: #0a0d1f;
 }
 .footer_categories {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
   align-items: center;
-  justify-content: start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  max-width: 100%;
+  justify-items: center;
+  padding: auto;
+  margin: 0 auto;
 }
 .footer_categories a {
   background: #26263f;
@@ -33,10 +36,4 @@ footer {
   color: white;
   font-weight: 300;
   width: 100%;
-}
-@media screen and (max-width: 768px) {
-  .footer_categories {
-    display: grid;
-    gap: 30px;
-  }
 }

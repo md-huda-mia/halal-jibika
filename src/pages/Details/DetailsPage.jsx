@@ -6,13 +6,14 @@ import PostAuthor from "../../components/Author/PostAuthor";
 import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import DeletePage from "../DeletePage/DeletePage";
 
 const DetailsPage = () => {
-  const [jobData, setJobData] = useState();
-  const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
-  const [error, setError] = useState(null);
+  const [jobData, setJobData] = useState();
   const [creatorID, setCreatorID] = useState(null);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { currentUser } = useContext(UserContext);
 
@@ -52,6 +53,10 @@ const DetailsPage = () => {
                 />
                 {currentUser?.id == jobData?.creator && (
                   <div className={`${styles.user_btn}`}>
+                    <Link to="" className={`${styles.btn_2}`}>
+                      {" "}
+                      <DeletePage />{" "}
+                    </Link>
                     <Link
                       to={`/post/users/${jobData?._id}/edit`}
                       className={`${styles.btn_1}`}>
