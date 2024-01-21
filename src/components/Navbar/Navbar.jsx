@@ -58,7 +58,12 @@ const Navbar = () => {
               </li>
               <li>
                 <Link to="/user" onClick={closeNavHandler}>
-                  {currentUser.name}
+                  {currentUser?.name}
+                </Link>
+              </li>
+              <li>
+                <Link to="/users" onClick={closeNavHandler}>
+                  Authors
                 </Link>
               </li>
               <li>

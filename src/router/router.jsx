@@ -19,6 +19,7 @@ import LogOut from "../components/Logout/LogOut";
 import EditPage from "../pages/EditPage/EditPage";
 import AuthorPost from "../pages/AuthorPost/AuthorPost";
 import CategoryPost from "../components/CategoryItem/categoryPost";
+import AllUsers from "../pages/AllUsers/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/user",
         element: <User />,
+      },
+      {
+        path: "/users",
+        element: <AllUsers />,
       },
       {
         path: "/posts/users/:id",

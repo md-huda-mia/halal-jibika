@@ -4,13 +4,16 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 const CreatePost = () => {
   const [title, setTitle] = useState("");
-  const [thumbnail, sethumbnail] = useState("");
+  const [thumbnail, setThumbnail] = useState("");
   const [category, setCategory] = useState("unCategorize");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [jobCategory, setJobCategory] = useState("jobCategorize");
+  const [error, setError] = useState("");
 
   // =========
   const navigate = useNavigate();
@@ -62,12 +65,40 @@ const CreatePost = () => {
   ];
   const JOBS_CATEGORIES = ["Full-Time", "Part-Time", "Remote"];
 
+  const createPost = async (e) => {
+    e.preventDefault();
+
+    const postData = new FormData();
+    postData.set("title", title);
+    postData.set("category", category);
+    postData.set("location", location);
+    postData.set("description", description);
+    postData.set("jobCategory", jobCategory);
+    postData.set("thumbnail", thumbnail);
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_URL}/posts`,
+        postData,
+        {
+          withCredentials: true,
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      if (response.status === 201) {
+        return navigate("/");
+      }
+    } catch (err) {
+      setError(err.response.data.message);
+    }
+  };
+
   return (
     <div className="create-post">
       <div className="container">
         <h2>Create post</h2>
-        <p className="form_error_message">This is an error message</p>
-        <form action="" className="form create_post_form">
+        {error && <p className="form_error_message">{error}</p>}
+        <form onSubmit={createPost} action="" className="form create_post_form">
           <input
             className="creInput"
             type="text"
@@ -111,11 +142,14 @@ const CreatePost = () => {
             className="creInput"
             type="file"
             value={thumbnail}
-            onChange={(e) => sethumbnail(e.target.files[0])}
-            accept="png, jpg, jpeg"
+            // onChange={(e) => sethumbnail(e.target.files[0])}
+            onChange={(e) => {
+              console.log(e.target.files[0]);
+              setThumbnail(e.target.files[0]);
+            }}
+            accept="png, jpeg, jpg"
           />
           <button type="submit" className="btn primary">
-            {" "}
             Create New Post
           </button>
         </form>

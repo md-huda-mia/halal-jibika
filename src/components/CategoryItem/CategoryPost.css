@@ -1,5 +1,8 @@
 .posts_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, auto));
+  gap: 2rem;
+  justify-content: start;
+  align-items: flex-start;
+  max-width: 100%;
 }

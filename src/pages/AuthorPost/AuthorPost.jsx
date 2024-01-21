@@ -24,7 +24,7 @@ const AuthorPost = () => {
       setIsLoading(false);
     };
     fetchPosts();
-  }, []);
+  }, [id]);
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -34,7 +34,7 @@ const AuthorPost = () => {
     <div className="posts">
       {jobData.length > 0 ? (
         <>
-          <div className="container posts_container">
+          <div className=" posts_container">
             {jobData.map((job) => (
               <JobsCard job={job} />
             ))}
